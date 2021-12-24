@@ -1,13 +1,6 @@
-const app = require('express')()
-const middlewares = require('../src/config/middlewares')
-const routes = require('./config/routers');
+const app = require('./app')
 
-
-app.use(middlewares.bodyParser)
-app.use(middlewares.cors)
-app.use(routes);
-
-const PORT =  8081
+const PORT =  8080
 
 app.listen(PORT, () => {
     console.log(`Servido listening on port ${PORT}`)

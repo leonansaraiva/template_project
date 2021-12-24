@@ -1,10 +1,14 @@
 const user = require('../api/user')
-const express = require('express')
-const router = express.Router()
+const router = require("express").Router()
+
 const auth = require('../api/auth')
 const passport = require('../config/passport')
 const admin = require('../config/admin')
 
+router.route('/test')
+  .get(function(req, res) {
+    res.status(200).json({ name: 'john' })
+})
 
 router.route('/')
   .get((req, res) => {
@@ -12,6 +16,7 @@ router.route('/')
     const msg = `Server is running`
     res.status(200).send(msg);
 })
+
 
 
 router.route('/signup')
@@ -33,7 +38,5 @@ router.route('/users/:id')
   .get(admin(user.getById))
   .put(user.save)
   .delete(admin(user.remove))
-
-
 
 module.exports = router;
