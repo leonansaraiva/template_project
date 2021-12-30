@@ -4,15 +4,6 @@
 
 <script>
 	import Counter from '$lib/Counter.svelte';
-
-
-	// import { goto } from '$app/navigation';
-	// import { user } from '../store/store';
-
-	// const logInUser = () => {
-	// 	user.set(2);
-	// 	goto('/about');
-	// };
 </script>
 <svelte:head>
 	<title>Home</title>

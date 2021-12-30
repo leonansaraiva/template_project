@@ -1,3 +1,13 @@
 import { writable } from 'svelte/store';
 
-export const user = writable(0);
+
+export const INITIAL_STATE = {
+    id: null,
+    name:"",
+    email: "",
+    admin: "",
+    token:"",
+  };
+
+export const userStore =  writable({...INITIAL_STATE })
+  

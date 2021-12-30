@@ -38,41 +38,12 @@
 		});
 	}
 
-	// import { user } from '../../store/store';
-	// import { onMount } from 'svelte';
-
-	// let user_value;
-
-	// user.subscribe(value => {
-	// 	user_value = value;
-	// 	console.log(`logout user=${JSON.stringify(user_value)}`)
-
-	// });
-	// import { goto } from '$app/navigation';
-
-	// const logOutUser = () => {
-	// 	user.set(1)
-	// 	goto('/');
-	// };
-
-
-
-	// onMount(() => {
-
-	// console.log(`logout user=${JSON.stringify(user_value)}`)
-	// 	if(user_value < 2) {
-	// 		goto('/');
-	// 	}
-	
-	// });
-
 </script>
 
 
 <svelte:head>
 	<title>Todos</title>
 </svelte:head>
-<!-- {#if user_value > 1} -->
 
 <div class="todos">
 	<h1>Todos</h1>
@@ -141,7 +112,6 @@
 		</div>
 	{/each}
 </div>
-<!-- {/if} -->
 
 <style>
 	.todos {

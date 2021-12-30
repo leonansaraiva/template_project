@@ -29,14 +29,17 @@ router.route('/validateToken')
   .post(auth.validateToken)
 
 router.route('/users')
-  .all(passport.authenticate())
   .get(user.get)
+
+router.route('/users')
+  .all(passport.authenticate())
   .post(user.save);
 
 router.route('/users/:id')
   .all(passport.authenticate())
-  .get(admin(user.getById))
+  .get(user.getById)
   .put(user.save)
+  .delete(user.remove)
   .delete(admin(user.remove))
 
 module.exports = router;

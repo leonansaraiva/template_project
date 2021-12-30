@@ -1,39 +1,46 @@
+<script context="module">
+	let user = {}
+	let routerProtected 
+
+	import { page } from '$app/stores';
+
+	// export async function load({ page, fetch, session, stuff }) {
+	// 	const url = 'http://localhost:8080/users/10'
+
+
+	// 	const res = await fetch(url);
+	// 	user =  await res.json()
+	// 	console.log(user)
+	// 	console.log(page)
+	// 	console.log(`path ${page.path}`)
+
+	// 	console.log(stuff)
+	
+	// 	routerProtected = !user.admin && page.path === '/about'
+
+	// 	console.log(routerProtected)
+
+	// 	if(routerProtected){
+	// 		return{  
+	// 			redirect:'/login',
+	// 			status:302
+	// 		}
+	// 	}   
+
+    //     return {}
+    // }
+</script>
+
 <script>
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 
-	console.log('here..')
-	import { goto } from '$app/navigation';
-	import { user } from '../store/store';
-	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-
-	let user_value;
-
-	user.subscribe(value => {
-		user_value = value;
-		console.log(`logout user=${JSON.stringify(user_value)}`)
-
-	})
-
-	onMount(() => {
-		console.log($page.path)
-
-	// console.log(`logout user=${JSON.stringify(user_value)}`)
-	// 	if(user_value < 2) {
-	// 		goto('/');
-	// 	}
-
-	});
-
-
-	
 </script>
 
 <Header />
 
 <main>
-	<slot />
+	<slot></slot>
 </main>
 
 
